@@ -35,18 +35,18 @@ class RoomsAdapter() : RecyclerView.Adapter<RoomsAdapter.Holder>() {
 
             binding.roomIdTv.text = "Room Id: ${roomList.get(position).id} "
             binding.roomMaxTv.text = "Max Occupancy: ${roomList.get(position).maxOccupancy}"
-            if (roomList.get(position).isOccupied){
+            if (roomList.get(position).isOccupied) {
                 binding.roomOccupiedTv.text = "Occupied"
                 binding.roomOccupiedTv.setTextColor(Color.RED)
 
-            }else {
+            } else {
                 binding.roomOccupiedTv.text = "Available"
                 binding.roomOccupiedTv.setTextColor(Color.GREEN)
             }
         }
     }
 
-    fun setList(roomList : List<RoomsModelItem>){
+    fun setList(roomList: List<RoomsModelItem>) {
         this.roomList.addAll(roomList)
         notifyDataSetChanged()
     }
