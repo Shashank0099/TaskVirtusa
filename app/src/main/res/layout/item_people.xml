@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/dp10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/personIv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="@dimen/dp80"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginStart="@dimen/dp10"/>
+
+        <TextView
+            android:id="@+id/personNameTv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/personIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/personEmailTv"
+            app:layout_constraintTop_toBottomOf="@id/personNameTv"
+            app:layout_constraintStart_toStartOf="@id/personNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp5"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/jobTitleTv"
+            app:layout_constraintTop_toBottomOf="@id/personEmailTv"
+            app:layout_constraintStart_toStartOf="@id/personNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp5"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/favColorTv"
+            app:layout_constraintTop_toBottomOf="@id/jobTitleTv"
+            app:layout_constraintStart_toStartOf="@id/personNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginBottom="@dimen/dp10"
+            android:textColor="@color/black"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
