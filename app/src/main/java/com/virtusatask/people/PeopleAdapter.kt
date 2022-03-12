@@ -52,9 +52,9 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.Holder>() {
         }
     }
 
-    fun setList(peopleList: List<PeopleResponseItem>) {
-        this.peopleList.addAll(peopleList)
-        notifyDataSetChanged()
+    fun setList(prevSize: Int, peopleList: MutableList<PeopleResponseItem>) {
+        this.peopleList = peopleList
+        notifyItemRangeInserted(prevSize, peopleList.size)
     }
 
 }

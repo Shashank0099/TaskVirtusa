@@ -24,7 +24,7 @@ class PeopleActivity : BaseActivity() {
             dismissLoader()
             when (it) {
                 is BaseResponse.Error -> showToast(it.error)
-                is BaseResponse.Success -> handleList(it.data)
+                is BaseResponse.Success -> handleList((binding.recyclerView.adapter as PeopleAdapter).peopleList.size, it.data)
             }
         }
     }
@@ -34,8 +34,8 @@ class PeopleActivity : BaseActivity() {
     }
 
 
-    private fun handleList(data: PeopleResponse) {
-        viewModel.setAdapterList(binding.recyclerView, data)
+    private fun handleList(prevSize: Int, data: PeopleResponse) {
+        viewModel.setAdapterList(binding.recyclerView, prevSize, data)
     }
 
 
