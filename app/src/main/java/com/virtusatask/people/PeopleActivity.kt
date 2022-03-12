@@ -20,7 +20,7 @@ class PeopleActivity : BaseActivity() {
         showLoader(getString(R.string.loading))
         viewModel = ViewModelProvider(this)[PeopleViewModel::class.java]
         viewModel.setPeopleAdapter(this, binding.recyclerView)
-        viewModel.peopleLiveData.observe(this){
+        viewModel.peopleLiveData.observe(this) {
             dismissLoader()
             when (it) {
                 is BaseResponse.Error -> showToast(it.error)
@@ -29,13 +29,13 @@ class PeopleActivity : BaseActivity() {
         }
     }
 
-    private fun showToast(message : String){
+    private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 
-    private fun handleList(data: PeopleResponse){
-          viewModel.setAdapterList(binding.recyclerView, data)
+    private fun handleList(data: PeopleResponse) {
+        viewModel.setAdapterList(binding.recyclerView, data)
     }
 
 

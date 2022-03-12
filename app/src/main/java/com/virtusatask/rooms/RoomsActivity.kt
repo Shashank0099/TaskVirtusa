@@ -20,7 +20,7 @@ class RoomsActivity : BaseActivity() {
         showLoader(getString(R.string.loading))
         viewModel = ViewModelProvider(this)[RoomViewModel::class.java]
         viewModel.setRoomAdapter(this, binding.recyclerView)
-        viewModel.roomLiveData.observe(this){
+        viewModel.roomLiveData.observe(this) {
             dismissLoader()
             when (it) {
                 is BaseResponse.Error -> showToast(it.error)
@@ -29,13 +29,13 @@ class RoomsActivity : BaseActivity() {
         }
     }
 
-    private fun showToast(message : String){
+    private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 
-    private fun handleList(data: RoomsModel){
-          viewModel.setAdapterList(binding.recyclerView, data)
+    private fun handleList(data: RoomsModel) {
+        viewModel.setAdapterList(binding.recyclerView, data)
     }
 
 

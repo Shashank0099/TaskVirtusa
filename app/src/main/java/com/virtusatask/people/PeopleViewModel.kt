@@ -43,7 +43,8 @@ class PeopleViewModel : ViewModel() {
                     }
 
                 } else {
-                    peopleMutableLiveData.value = BaseResponse.Error("Some Error Occur : ${response.code()}")
+                    peopleMutableLiveData.value =
+                        BaseResponse.Error("Some Error Occur : ${response.code()}")
                 }
             } catch (exp: Exception) {
                 peopleMutableLiveData.value = BaseResponse.Error("Some Error Occur ${exp.message} ")
@@ -58,8 +59,8 @@ class PeopleViewModel : ViewModel() {
 
     }
 
-    fun setAdapterList(rv: RecyclerView, roomList: List<PeopleResponseItem> ){
-        (rv.adapter as PeopleAdapter) .setList(roomList)
+    fun setAdapterList(rv: RecyclerView, roomList: List<PeopleResponseItem>) {
+        (rv.adapter as PeopleAdapter).setList(roomList)
     }
 
 }
