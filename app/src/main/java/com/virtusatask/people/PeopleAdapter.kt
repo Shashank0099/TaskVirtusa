@@ -36,7 +36,9 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.Holder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
 
-            (peopleList.get(position).firstName +" " + peopleList.get(position).lastName).also { binding.personNameTv.text = it }
+            (peopleList.get(position).firstName + " " + peopleList.get(position).lastName).also {
+                binding.personNameTv.text = it
+            }
             binding.personEmailTv.text = peopleList.get(position).email
             binding.jobTitleTv.text = peopleList.get(position).jobtitle
             binding.favColorTv.text = peopleList.get(position).favouriteColor
@@ -50,7 +52,7 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.Holder>() {
         }
     }
 
-    fun setList(peopleList : List<PeopleResponseItem>){
+    fun setList(peopleList: List<PeopleResponseItem>) {
         this.peopleList.addAll(peopleList)
         notifyDataSetChanged()
     }
